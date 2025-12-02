@@ -1,0 +1,107 @@
+.kompos {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.kompos-left {
+  max-width: 500px;
+  text-align: left;
+  margin-right: 40px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.kompos-left p {
+  font-size: 18px;
+  color: #47663b;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.kompos-right {
+  max-width: 500px;
+}
+
+/* bagian 2 */
+.jenis-kompos {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.jenis-kompos h2 {
+  font-family: inter, sans-serif;
+  font-size: 35px;
+  color: #1f4529;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.kompos-card {
+  display: flex;
+  text-align: left;
+  margin-top: 0;
+}
+
+.card-isi {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 560px;
+  height: 370px;
+  padding: 30px;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-isi h3 {
+  font-family: inter, sans-serif;
+  font-size: 27px;
+  color: #375c3f;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card-isi ul {
+  font-family: inter, sans-serif;
+  font-size: 21px;
+  color: #47663b;
+  line-height: 1.5;
+  margin-left: 20px;
+}
+
+/* bagian 3 */
+.pembuatan-kompos h2 {
+  font-family: inter, sans-serif;
+  font-size: 35px;
+  color: #1f4529;
+  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.tutor-kompos-card {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 1000px;
+  height: 530px;
+  padding: 30px 50px;
+  margin: 10px 90px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutor-kompos-card h3 {
+  font-family: inter, sans-serif;
+  font-size: 21px;
+  color: #47663b;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.tutor-kompos-card ul {
+  font-family: inter, sans-serif;
+  font-size: 21px;
+  color: #47663b;
+  margin-bottom: 15px;
+  text-align: left;
+}

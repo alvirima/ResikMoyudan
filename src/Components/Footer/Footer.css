@@ -1,0 +1,95 @@
+.footer {
+  color: #f6f6f6;
+  background-color: #1f4529;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 8vw;
+  padding-top: 40px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.footer-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+}
+
+.footer p {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #f6f6f6;
+}
+
+.footer-content-center,
+.footer-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+
+.footer-content-right ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* jarak antar item */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+}
+
+.footer-content-left {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 15px;
+}
+.footer-logo {
+  width: 65px;
+  height: auto;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-text h3 {
+  font-family: "inter", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: regular;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* jarak antara icon dan nomor */
+  margin-top: 5px;
+}
+
+.phone-icon {
+  width: 30px;
+  height: auto;
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: #f6f6f6;
+  text-align: center;
+  width: 100%;
+  margin-top: 50px; /* ⬅️ Jarak natural dari content ke copyright */
+  margin-bottom: 10px;
+}

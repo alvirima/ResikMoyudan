@@ -1,0 +1,84 @@
+nav {
+  width: 100%;
+  color: #1f4529;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 50px;
+}
+
+.logo {
+  width: 230px;
+  height: 60px;
+}
+
+nav ul li {
+  display: inline-block;
+  align-items: center;
+  list-style: none;
+  margin: 5px 20px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  padding-right: 10px;
+}
+
+/* .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+} */
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.signin-btn {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 10px;
+  background-color: white;
+  color: #1f4529;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.blur-nav {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease;
+}
+
+.active-link {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  padding: 8px 28px;
+}
