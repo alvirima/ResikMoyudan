@@ -2,6 +2,7 @@ import React from "react";
 import "./Program.css";
 import sedekahSampah from "../../Assets/sedekahSampah.svg";
 import edukasi from "../../Assets/edukasi.svg";
+import { Link } from "react-router-dom";
 
 const Program = () => {
   return (
@@ -17,7 +18,9 @@ const Program = () => {
             ulang, dan pengelolaan sampah yang bertanggung <br /> jawab untuk
             mendukung kelestarian lingkungan.
           </p>
-          <button>Selengkapnya</button>
+          <Link to="/Edukasi">
+            <button>Selengkapnya</button>
+          </Link>
         </div>
         <div className="card">
           <div className="icon-prog">
@@ -29,7 +32,9 @@ const Program = () => {
             sampah, termasuk volume <br /> sampah terkelola dan penyaluran dana
             sosial.
           </p>
-          <button>Selengkapnya</button>
+          <Link to="/SedekahSampah">
+            <button>Selengkapnya</button>
+          </Link>
         </div>
       </div>
     </div>

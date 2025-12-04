@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import "./AnggotaKKN.css";
-import Next from "../../assets/Next.svg";
-import Preview from "../../assets/Preview.svg";
-// import buArifah from "../../Assets/buArifah.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+
 import Hannah from "../../Assets/Hannah.JPG";
 import Fatma from "../../Assets/Fatma.JPG";
 import Rima from "../../Assets/Rima.JPG";
@@ -16,126 +20,229 @@ import Della from "../../Assets/Della.JPG";
 import Rofi from "../../Assets/Rofi.JPG";
 import Vinka from "../../Assets/Vinka.JPG";
 
-const data = [
+const profiles = [
   {
-    img: Hannah,
-    nama: "Hannah Khairunnisa F.",
-    jurusan: "Informatika",
-    kampus: "UIN Sunan Kalijaga",
+    id: 1,
+    name: "Fatimah Khoirun Nisa",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Fatma,
   },
   {
-    img: Fatma,
-    nama: "Fatimah Khoirun Nisa",
-    jurusan: "Informatika",
-    kampus: "UIN Sunan Kalijaga",
+    id: 2,
+    name: "Dinar Alvi Karima",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Rima,
   },
   {
-    img: Rima,
-    nama: "Dinar Alvi Karima",
-    jurusan: "Informatika",
-    kampus: "UIN Sunan Kalijaga",
+    id: 3,
+    name: "Azzahra Nur Addin Afeeanti",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Addin,
   },
   {
-    img: Addin,
-    nama: "Azzahra Nur Addin A.",
-    jurusan: "Informatika",
-    kampus: "UIN Sunan Kalijaga",
+    id: 4,
+    name: "Alfi Humaidi",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Alfi,
   },
   {
-    img: Alfi,
-    nama: "Alfi Humaidi",
-    jurusan: "Teknik Industri",
-    kampus: "UIN Sunan Kalijaga",
+    id: 5,
+    name: "Muhammad Andian Fasha",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Fasa,
   },
   {
-    img: Fasa,
-    nama: "Muhammad Andian Fasha",
-    jurusan: "Teknik Industri",
-    kampus: "UIN Sunan Kalijaga",
+    id: 6,
+    name: "Ahmad Fauji",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Oji,
   },
   {
-    img: Oji,
-    nama: "Ahmad Fauji",
-    jurusan: "Kimia",
-    kampus: "UIN Sunan Kalijaga",
+    id: 7,
+    name: "Alex Tajudin Pane",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Alex,
   },
   {
-    img: Alex,
-    nama: "Alex Tajudin Pane",
-    jurusan: "Teknik Industri",
-    kampus: "UIN Sunan Kalijaga",
+    id: 8,
+    name: "Ida Laelatul Kasanah",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Ida,
   },
   {
-    img: Ida,
-    nama: "Ida Laelatul Kasanah",
-    jurusan: "Kimia",
-    kampus: "UIN Sunan Kalijaga",
+    id: 9,
+    name: "Della Dana Ayu Lestari",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Della,
   },
   {
-    img: Della,
-    nama: "Della Dana Ayu Lestari",
-    jurusan: "Teknik Industri",
-    kampus: "UIN Sunan Kalijaga",
+    id: 10,
+    name: "Rofi Rusetyo",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Rofi,
   },
   {
-    img: Rofi,
-    nama: "Rofi Rusetyo",
-    jurusan: "Teknik Industri",
-    kampus: "UIN Sunan Kalijaga",
+    id: 11,
+    name: "Vinka Diaz Rivea",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Vinka,
   },
   {
-    img: Vinka,
-    nama: "Vinka Diaz Rivea",
-    jurusan: "Pendidikan Biologi",
-    kampus: "UIN Sunan Kalijaga",
+    id: 12,
+    name: "Hannah Khairunnisa F.",
+    major: "Informatika",
+    uni: "UIN Sunan Kalijaga",
+    image: Hannah,
   },
 ];
 
-const AnggotaKKN = () => {
-  const [index, setIndex] = useState(0);
-
-  const CARD_WIDTH = 350;
-  const VISIBLE_CARD = 3;
-
-  const next = () => {
-    if (index < data.length - 3) {
-      setIndex(index + 1);
-    }
-  };
-
-  const prev = () => {
-    if (index > 0) {
-      setIndex(index - 1);
-    }
-  };
-
+export default function ProfileSlider() {
   return (
-    <div className="anggota">
-      {/* <img src={buArifah} alt="" className="dosen"/> */}
-      {/* <h1>Anggota KKN UIN Sunan Kalijaga</h1> */}
-      <button className="nav left" onClick={prev}>
-        ❮
-      </button>
-      <div className="anggota-carousel">
-        <div
-          className="anggota-track"
-          style={{ transform: `translateX(-${index * 340}px)` }}
+    <div style={styles.pageContainer}>
+      <div style={styles.sliderWrapper}>
+        {/* Custom CSS untuk Swiper */}
+        <style>
+          {`
+             .mySwiper {
+              width: 100%;
+            }
+
+            .swiper-slide {
+              opacity: 1;
+              transition: opacity 0.3s;
+            }
+
+            .swiper-slide-active {
+              opacity: 1;
+            }
+
+            .swiper-pagination-bullet-active {
+              background-color: #1b4d3e !important;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+              color: #1b4d3e;
+            }
+
+            .swiper-button-next::after,
+            .swiper-button-prev::after {
+              font-size: 24px;
+              font-weight: bold;
+            }
+          `}
+        </style>
+
+        <Swiper
+          effect={"coverflow"}
+          // grabCursor={true}
+          centeredSlides={true}
+          loop={true}
+          slidesPerView={"auto"}
+          spaceBetween={100}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+            slideShadows: false,
+          }}
+          navigation={true}
+          modules={[EffectCoverflow, Pagination, Navigation]}
+          className="mySwiper"
+          style={{ paddingBottom: "60px" }}
         >
-          {data.map((item, i) => (
-            <div className="anggota-card" key={i}>
-              <img src={item.img} alt={item.nama} />
-              <h3>{item.nama}</h3>
-              <h4 className="jurusan">{item.jurusan}</h4>
-              <p className="kampus">{item.kampus}</p>
-            </div>
+          {profiles.map((profile) => (
+            <SwiperSlide key={profile.id} style={styles.slideCard}>
+              <div style={styles.cardContent}>
+                <div style={styles.imageContainer}>
+                  <img
+                    src={profile.image}
+                    alt={profile.name}
+                    style={styles.image}
+                  />
+                </div>
+
+                <h3 style={styles.name}>{profile.name}</h3>
+                <p style={styles.major}>{profile.major}</p>
+                <p style={styles.uni}>{profile.uni}</p>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
-      <button className="nav right" onClick={next}>
-        ❯
-      </button>
     </div>
   );
-};
+}
 
-export default AnggotaKKN;
+const styles = {
+  pageContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "100vh",
+    fontFamily: "'Poppins', sans-serif",
+  },
+  sliderWrapper: {
+    width: "100%",
+    maxWidth: "1000px",
+    padding: "0 20px",
+  },
+  slideCard: {
+    width: "300px",
+    height: "500px",
+  },
+  cardContent: {
+    backgroundColor: "white",
+    borderRadius: "15px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+    padding: "20px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    textAlign: "center",
+    border: "1px solid #eaeaea",
+    height: "100%",
+  },
+  imageContainer: {
+    width: "100%",
+    height: "300px",
+    marginBottom: "15px",
+    borderRadius: "10px",
+    overflow: "hidden",
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+  },
+  name: {
+    fontSize: "21px",
+    fontWeight: "700",
+    color: "#1F4529",
+    margin: "10px 0 5px 0",
+  },
+  major: {
+    fontSize: "18px",
+    fontWeight: "600",
+    color: "#4F7355",
+    margin: "0",
+  },
+  uni: {
+    fontSize: "16px",
+    fontWeight: "400",
+    color: "#4F7355",
+    marginTop: "4px",
+  },
+};

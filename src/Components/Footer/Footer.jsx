@@ -2,6 +2,7 @@ import React from "react";
 import "./Footer.css";
 import logoFooter from "../../Assets/logo-footer.svg";
 import Phone from "../../Assets/phone.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -31,10 +32,18 @@ const Footer = () => {
           <div className="footer-text">
             <h3>Tautan Cepat</h3>
             <ul>
-              <li>Home</li>
-              <li>Sedekah Sampah</li>
-              <li>Edukasi</li>
-              <li>About Us</li>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/SedekahSampah">
+                <li>Sedekah Sampah</li>
+              </Link>
+              <Link to="/Edukasi">
+                <li>Edukasi</li>
+              </Link>
+              <Link to="/AboutUs">
+                <li>About Us</li>
+              </Link>
             </ul>
           </div>
         </div>

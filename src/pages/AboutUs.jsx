@@ -3,6 +3,7 @@ import HeroAboutUs from "../Components/HeroAboutUs/HeroAboutUs";
 import KKNFullTeam from "../Components/kknFullTeam/kknFullTeam";
 import AnggotaKKN from "../Components/AnggotaKKN/AnggotaKKN";
 import Title from "../Components/Title/Title";
+import DosenPembimbing from "../Components/DosenPembimbing/DosenPembimbing";
 
 const AboutUs = () => {
   return (
@@ -15,7 +16,14 @@ const AboutUs = () => {
         <Title title2="KKN Tematik UIN Sunan Kalijaga" />
         <KKNFullTeam />
       </div>
-      <AnggotaKKN />
+      <div>
+        <Title title2="Dosen Pembimbing" />
+        <DosenPembimbing />
+      </div>
+      <div>
+        <Title title2="Anggota KKN Tematik UIN Sunan Kalijaga" />
+        <AnggotaKKN />
+      </div>
     </div>
   );
 };

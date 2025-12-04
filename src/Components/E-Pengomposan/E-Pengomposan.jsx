@@ -8,30 +8,39 @@ const Pengomposan = () => {
 
       <div className="kompos">
         <div className="kompos-left">
-          <p>
-            <strong>Apa itu kompos? </strong>
-            <br />
-            <strong>Kompos</strong> adalah{" "}
-            <strong>
-              pupuk alami yang dihasilkan dari proses pelapukan bahan organik{" "}
-            </strong>{" "}
-            (seperti sisa makanan dan daun) oleh mikroorganisme. Proses ini
-            disebut pengomposan (composting). Kompos sendiri dibagi menjadi dua
-            jenis, yaitu
-            <strong>kompos padat</strong> dan <strong>kompos cair</strong>
-            , yang masing-masing memiliki manfaat dan cara penggunaan yang
-            berbeda. <br />
-            <strong>Manfaat Membuat kommpos</strong>
-            <br />
-            <strong>1. Mengurangi Sampah</strong> : hingga 60%, karena sampah
-            dapur dan kebun tidak dibuang ke TPA.
-            <br /> <strong>2. Menyuburkan Tanah</strong>: Kompos memperbaiki
-            struktur tanah dan menyediakan nutrisi alami bagi tanaman. <br />{" "}
-            <strong>3. Ramah Lingkungan</strong>: Mengurangi polusi udara (dari
-            pembakaran sampah) dan polusi tanah (dari sampah organik yang
-            terbuang). <br /> <strong>4. Ekonomis</strong>: Menghemat
-            pengeluaran untuk pupuk kimia
-          </p>
+          <div className="kompos-left-isi">
+            <h4>Apa Itu Kompos?</h4>
+            <p>
+              <span>Kompos </span>adalah{" "}
+              <span>
+                pupuk alami yang dihasilkan dari proses pelapukan bahan organik
+              </span>
+              (seperti sisa makanan dan daun) oleh mikroorganisme. Proses ini
+              disebut pengomposan (composting). Kompos sendiri dibagi menjadi
+              dua jenis, yaitu <span>kompoos padat </span>dan{" "}
+              <span>kompos cair</span>, yang masing-masing memiliki manfaat dan
+              cara penggunaan yang berbeda.
+            </p>
+            <h4>Manfaat Membuat Kompos</h4>
+            <ol>
+              <li>
+                <span>Mengurangi Sampah: </span>hingga 60%, karena sampah dapur
+                dan kebun tidak dibuang ke TPA.
+              </li>
+              <li>
+                <span>Menyuburkan Tanah: </span>Kompos memperbaiki struktur
+                tanah dan menyediakan nutrisi alamu bagi tanaman.
+              </li>
+              <li>
+                <span>Ramah Lingkungan: </span>Mengurangi polusi udara (dari
+                pembakaran sampah) dan polusi tanah (dari sampah organik yang
+                terbuang).
+              </li>
+              <li>
+                <span>Ekonomis:</span>Menghemat pengeluaran untuk pupuk kimia.
+              </li>
+            </ol>
+          </div>
         </div>
         <div className="kompos-right">
           <img src={siklusHidupKompos} alt="" />

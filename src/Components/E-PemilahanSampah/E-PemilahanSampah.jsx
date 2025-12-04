@@ -38,42 +38,52 @@ const Pemilahan = () => {
       <div className="isiEdukasiPemilahan">
         <h2>Pemilihan sampah berdasarkan jenis sampah & prinsip 3R</h2>
         <div className="card-isiEdukasiPemilahan">
+          <h3>1. Klasifikasi Jenis Sampah</h3>
           <p>
-            <strong>1.Klasifikasi Jenis Sampah</strong>
-            <br />
             Sampah dapat diklasifikasikan menjadi tiga jenis utama untuk
-            memudahkan pengelolaannya: <br /> • <strong>
-              Sampah Organik:
-            </strong>{" "}
-            Berasal dari makhluk hidup (contoh: sisa makanan, daun). Sampah ini
-            mudah membusuk <br /> dan dapat diolah lebih lanjut menjadi kompos
-            atau pakan ternak.
-            <br />• <strong>Sampah Anorganik:</strong> Berasal dari bahan
-            non-hayati (contoh: plastik, kertas, kaca, logam). Sampah ini sulit{" "}
-            <br /> terurai tetapi dapat didaur ulang atau digunakan kembali.
-            <br />• <strong>
-              Sampah B3 (Bahan Berbahaya dan Beracun):
-            </strong>{" "}
-            Mengandung bahan kimia berbahaya (contoh: baterai, lampu neon, obat
-            kadaluarsa, elektronik rusak). Sampah ini memerlukan penanganan
-            khusus dan tidak boleh <br /> dicampur dengan sampah rumah tangga
-            biasa karena dapat mencemari lingkungan dan membahayakan kesehatan.
-            <br />
-            <strong>2.Prinsip 3R untuk Pengelolaan Sampah yang Bijak</strong>
-            <br />
+            memudahkan pengelolaannya:
+          </p>
+          <ul>
+            <li>
+              <strong>Sampah Organik:</strong>Berasal dari makhluk hidup
+              (contoh: sisa makanan, daun). Sampah ini mudah membusuk dan dapat
+              diolah lebih lanjut menjadi kompos atau pakan ternak
+            </li>
+            <li>
+              <strong>Sampah Anorganik:</strong>Berasal dari bahan non-hayati
+              (contoh: plastik, kertas, kaca, logam). Sampah ini sulit terurai
+              tetapi dapat didaur ulang atau digunakan kembali.
+            </li>
+            <li>
+              <strong>Sampah B3 (Bahan Berbahaya & Beracun)</strong>Mengandung
+              bahan kimia berbahaya (contoh: baterai, lampu neon, obat
+              kadaluarsa, elektronik rusak). Sampah ini memerlukan panenganan
+              khusus dan tidak boleh dicampur dengan sampah rumah tangga biasa
+              karena dapat mencemari lingkungan dan membahayakan kesehatan.
+            </li>
+          </ul>
+          <h3>2. Prinsip 3R untuk Pengelolaan Sampah yang Bijak</h3>
+          <p>
             Prinsip 3R adalah konsep utama untuk mengurangi timbunan sampah dan
             melestarikan lingkungan.
-            <br />• <strong> Reduce (Kurangi)</strong>: Mengurangi jumlah sampah
-            dari sumbernya. Contoh: Membawa tas belanja sendiri dan menghindari
-            barang sekali pakai.
-            <br />• <strong> Reuse (Gunakan Kembali)</strong>: Memanfaatkan
-            kembali barang-barang yang masih bisa dipakai sebelum akhirnya
-            dibuang. Contoh: Menggunakan botol kaca bekas sebagai wadah
-            penyimpanan.
-            <br />• <strong> Recycle (Daur Ulang)</strong>: Mengolah kembali
-            menjadi bahan baku atau produk baru. Contoh: Mendaur ulang kertas
-            bekas dan botol plastik.
           </p>
+          <ul>
+            <li>
+              <strong>Reduce (Kurangi):</strong>Mengurangi jumlah sampah dari
+              sumbernya. Contoh: Membawa tas belanja sendiri dan menghindari
+              barang sekali pakai.
+            </li>
+            <li>
+              <strong>Reuse (Gunakan Kembali):</strong>Memanfaatkan kembali
+              barang-barang yang masih bisa dipakai sebelum akhirnya dibuang.
+              Contoh: Menggunakan botol kaca bekas sebagai penyimppanan.
+            </li>
+            <li>
+              <strong>Recycle (Daur Ulang):</strong>Mengolah kembali sampah
+              menjadi bahan baku atau produk baru. Contoh: Mendaur ulang kertas
+              bekas dan botol plastik.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
