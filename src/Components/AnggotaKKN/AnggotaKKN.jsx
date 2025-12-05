@@ -1,24 +1,32 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import React, { memo } from "react";
+import {
+  Swiper,
+  SwiperSlide,
+} from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+} from "swiper/modules";
 
-import Hannah from "../../Assets/Hannah.JPG";
-import Fatma from "../../Assets/Fatma.JPG";
-import Rima from "../../Assets/Rima.JPG";
-import Addin from "../../Assets/Addin.JPG";
-import Alfi from "../../Assets/Alfi.JPG";
-import Fasa from "../../Assets/Fasa.JPG";
-import Oji from "../../Assets/Oji.JPG";
-import Alex from "../../Assets/Alex.JPG";
-import Ida from "../../Assets/Ida.JPG";
-import Della from "../../Assets/Della.JPG";
-import Rofi from "../../Assets/Rofi.JPG";
-import Vinka from "../../Assets/Vinka.JPG";
+import Hannah from "../../assets/anggota-compressed/Hannah.webp";
+import Vinka from "../../assets/anggota-compressed/Vinka.webp";
+import Rofi from "../../assets/anggota-compressed/Rofi.webp";
+import Della from "../../assets/anggota-compressed/Della.webp";
+import Ida from "../../assets/anggota-compressed/Ida.webp";
+import Alex from "../../assets/anggota-compressed/Alex.webp";
+import Oji from "../../assets/anggota-compressed/Oji.webp";
+import Fasa from "../../assets/anggota-compressed/Fasa.webp";
+import Alfi from "../../assets/anggota-compressed/Alfi.webp";
+import Addin from "../../assets/anggota-compressed/Addin.webp";
+import Rima from "../../assets/anggota-compressed/Rima.webp";
+import Fatma from "../../assets/anggota-compressed/Fatma.webp";
 
 const profiles = [
   {
@@ -107,50 +115,81 @@ const profiles = [
   },
 ];
 
+const ProfileCard = memo(({ profile }) => {
+  return (
+    <div style={styles.cardContent}>
+      <div style={styles.imageContainer}>
+        <img
+          src={profile.image}
+          alt={profile.name}
+          style={styles.image}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <h3 style={styles.name}>{profile.name}</h3>
+      <p style={styles.major}>{profile.major}</p>
+      <p style={styles.uni}>{profile.uni}</p>
+    </div>
+  );
+});
+
 export default function ProfileSlider() {
   return (
     <div style={styles.pageContainer}>
       <div style={styles.sliderWrapper}>
-        {/* Custom CSS untuk Swiper */}
         <style>
           {`
-             .mySwiper {
+            .mySwiper {
               width: 100%;
+              padding-top: 20px;
+              padding-bottom: 60px;
             }
-
             .swiper-slide {
               opacity: 1;
               transition: opacity 0.3s;
+              will-change: transform; 
+              transform-style: preserve-3d;
             }
-
-            .swiper-slide-active {
-              opacity: 1;
-            }
-
             .swiper-pagination-bullet-active {
               background-color: #1b4d3e !important;
             }
-
-            .swiper-button-next,
-            .swiper-button-prev {
+            .slider-arrow {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              z-index: 20;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
               color: #1b4d3e;
             }
-
-            .swiper-button-next::after,
-            .swiper-button-prev::after {
-              font-size: 24px;
+            .slider-arrow::after {
+              font-size: 20px !important;
               font-weight: bold;
+            }
+            .custom-prev { left: -60px; }
+            .custom-next { right: -60px; }
+            @media (max-width: 768px) {
+               .custom-prev { left: 0px; }
+               .custom-next { right: 0px; }
             }
           `}
         </style>
 
+        <div className="slider-arrow custom-prev swiper-button-prev"></div>
+        <div className="slider-arrow custom-next swiper-button-next"></div>
+
         <Swiper
           effect={"coverflow"}
-          // grabCursor={true}
           centeredSlides={true}
           loop={true}
           slidesPerView={"auto"}
-          spaceBetween={100}
+          spaceBetween={80}
+          speed={500}
           coverflowEffect={{
             rotate: 0,
             stretch: 0,
@@ -158,26 +197,27 @@ export default function ProfileSlider() {
             modifier: 2.5,
             slideShadows: false,
           }}
-          navigation={true}
-          modules={[EffectCoverflow, Pagination, Navigation]}
+          navigation={{
+            nextEl: ".custom-next",
+            prevEl: ".custom-prev",
+            clickable: true,
+          }}
+          watchSlidesProgress={true}
+          observer={true}
+          observeParents={true}
+          modules={[
+            EffectCoverflow,
+            Pagination,
+            Navigation,
+          ]}
           className="mySwiper"
-          style={{ paddingBottom: "60px" }}
         >
           {profiles.map((profile) => (
-            <SwiperSlide key={profile.id} style={styles.slideCard}>
-              <div style={styles.cardContent}>
-                <div style={styles.imageContainer}>
-                  <img
-                    src={profile.image}
-                    alt={profile.name}
-                    style={styles.image}
-                  />
-                </div>
-
-                <h3 style={styles.name}>{profile.name}</h3>
-                <p style={styles.major}>{profile.major}</p>
-                <p style={styles.uni}>{profile.uni}</p>
-              </div>
+            <SwiperSlide
+              key={profile.id}
+              style={styles.slideCard}
+            >
+              <ProfileCard profile={profile} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -193,11 +233,14 @@ const styles = {
     justifyContent: "center",
     minHeight: "100vh",
     fontFamily: "'Poppins', sans-serif",
+    backgroundColor: "#f9f9f9",
+    overflow: "hidden",
   },
   sliderWrapper: {
     width: "100%",
     maxWidth: "1000px",
     padding: "0 20px",
+    position: "relative",
   },
   slideCard: {
     width: "300px",
@@ -206,7 +249,7 @@ const styles = {
   cardContent: {
     backgroundColor: "white",
     borderRadius: "15px",
-    boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+    boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
     padding: "20px",
     display: "flex",
     flexDirection: "column",
@@ -214,6 +257,8 @@ const styles = {
     textAlign: "center",
     border: "1px solid #eaeaea",
     height: "100%",
+    transform: "translateZ(0)",
+    willChange: "transform",
   },
   imageContainer: {
     width: "100%",
@@ -221,10 +266,11 @@ const styles = {
     marginBottom: "15px",
     borderRadius: "10px",
     overflow: "hidden",
+    backgroundColor: "#f0f0f0",
   },
   image: {
     width: "100%",
-    height: "120%",
+    height: "100%",
     objectFit: "cover",
   },
   name: {
