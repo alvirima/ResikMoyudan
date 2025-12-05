@@ -231,9 +231,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    minHeight: "100vh",
     fontFamily: "'Poppins', sans-serif",
-    backgroundColor: "#f9f9f9",
     overflow: "hidden",
   },
   sliderWrapper: {
