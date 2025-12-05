@@ -1,17 +1,36 @@
-nav {
-  width: 100%;
-  color: #1f4529;
+.navbar-wrapper {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
-  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navbar-pill {
+  width: 100%;
+  max-width: 1280px;
+  height: 70px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: fixed;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: all 0.4s ease;
 }
 
 .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.nav-right {
   display: flex;
   align-items: center;
 }
@@ -39,21 +58,6 @@ nav ul li {
   padding-right: 10px;
 }
 
-/* .nav-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-} */
-
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
 .signin-btn {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
@@ -67,18 +71,75 @@ nav ul li {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.signin-btn:hover {
+  background: #1f4529;
+  color: #ffffff;
+}
+
 .blur-nav {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: background 0.5s ease;
+  width: 85%;
+  margin: 16px auto;
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 10px 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
 }
 
-.active-link {
-  background: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  white-space: nowrap;
 }
 
-.nav-link {
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: "Poppins";
+  font-size: 16px;
+  text-decoration: none;
+  color: #1f4529;
+}
+
+.nav-links a:hover {
+  color: #9ebc9e;
+}
+
+.btn {
+  background: #ffffff;
+  color: #1f4529;
   padding: 8px 28px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.scrolled .btn {
+  background: #1f4529;
+  color: #ffffff;
+}
+
+.scrolled .signin-btn {
+  background: white;
+  border-radius: 30px;
+}
+
+.scrolled .signin-btn:hover {
+  background: #1f4529;
+  color: #ffffff;
+}
+
+.scrolled .navbar-pill {
+  width: 90%;
+  max-width: 1180px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 999px; /* OVAL */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }

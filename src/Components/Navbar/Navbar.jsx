@@ -5,56 +5,59 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
-    });
+    const handleScroll = () => {
+      setSticky(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav className={`container ${sticky ? "blur-nav" : ""}`}>
-      <div className="nav-left">
-        <div className="logo-section">
+    <nav className={`navbar-wrapper ${sticky ? "scrolled" : ""}`}>
+      <div className="navbar-pill">
+        <div className="nav-left">
           <img src={logo} alt="" className="logo" />
+
+          <ul className="nav-links">
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "btn" : "")}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/sedekahSampah"
+                className={({ isActive }) => (isActive ? "btn" : "")}
+              >
+                Sedekah Sampah
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/edukasi"
+                className={({ isActive }) => (isActive ? "btn" : "")}
+              >
+                Edukasi
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/aboutUs"
+                className={({ isActive }) => (isActive ? "btn" : "")}
+              >
+                About Us
+              </NavLink>
+            </li>
+          </ul>
         </div>
 
-        <ul className="nav-links">
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "btn" : "")}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/sedekahSampah"
-              className={({ isActive }) => (isActive ? "btn" : "")}
-            >
-              Sedekah Sampah
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/edukasi"
-              className={({ isActive }) => (isActive ? "btn" : "")}
-            >
-              Edukasi
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/aboutUs"
-              className={({ isActive }) => (isActive ? "btn" : "")}
-            >
-              About Us
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className="nav-right">
-        <NavLink to="/login" className="signin-btn">
+        <NavLink className="signin-btn" to="/">
           Sign In
         </NavLink>
       </div>

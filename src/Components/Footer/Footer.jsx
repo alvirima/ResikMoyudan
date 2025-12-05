@@ -32,18 +32,10 @@ const Footer = () => {
           <div className="footer-text">
             <h3>Tautan Cepat</h3>
             <ul>
-              <Link to="/">
-                <li>Home</li>
-              </Link>
-              <Link to="/SedekahSampah">
-                <li>Sedekah Sampah</li>
-              </Link>
-              <Link to="/Edukasi">
-                <li>Edukasi</li>
-              </Link>
-              <Link to="/AboutUs">
-                <li>About Us</li>
-              </Link>
+              <Link to="/">Home</Link>
+              <Link to="/SedekahSampah">Sedekah Sampah</Link>
+              <Link to="/Edukasi">Edukasi</Link>
+              <Link to="/AboutUs">About Us</Link>
             </ul>
           </div>
         </div>

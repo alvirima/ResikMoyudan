@@ -224,7 +224,7 @@ const styles = {
   },
   image: {
     width: "100%",
-    height: "100%",
+    height: "120%",
     objectFit: "cover",
   },
   name: {
